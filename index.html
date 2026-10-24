@@ -593,7 +593,7 @@ dayNav.forEach(function(id,i){
   d.innerHTML=(prev?'<a href="#'+prev+'">← '+tops[prev]+'</a>':'<span></span>')+(next?'<a href="#'+next+'">'+tops[next]+' →</a>':'<span></span>');
   el.appendChild(d);
 });
-document.getElementById('menubtn').addEventListener('click',function(){document.body.classList.toggle('menu');});
+document.getElementById('menubtn').addEventListener('click',function(e){e.stopPropagation();document.body.classList.toggle('menu');});
 document.querySelector('.main').addEventListener('click',function(){document.body.classList.remove('menu');});
 route();
 
