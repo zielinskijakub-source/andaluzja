@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andaluzja 29.10–7.11.2026 – przewodnik ze zdjęciami</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#ffffff; --ink:#1f2933; --muted:#5b6770; --line:#e3ddd2;
+  --accent:#b4441f; --accent2:#2a6f77; --side:#1f2a30; --sideink:#e9e4da; --sidemuted:#9fb0b8; --sideactive:#b4441f;
+  --warn-bg:#fff4e0; --warn-line:#e8b04a; --ok-bg:#e8f4ee; --ok-line:#4a9d73;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#14171a; --card:#1d2226; --ink:#e8e6e1; --muted:#9aa4ab; --line:#333b41;
+    --accent:#f08a5d; --accent2:#6cc3cc; --side:#0e1113; --sideactive:#c4552c;
+    --warn-bg:#3a2f17; --warn-line:#a67b22; --ok-bg:#16322a; --ok-line:#2f7a5a; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent2)}
+/* layout */
+.app{display:flex;min-height:100vh}
+.side{position:fixed;inset:0 auto 0 0;width:270px;background:var(--side);color:var(--sideink);overflow-y:auto;z-index:30;padding:18px 0 28px;transition:transform .25s}
+.side .brand{padding:0 20px 14px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:8px}
+.side .brand b{display:block;font-size:1.15rem;line-height:1.25}
+.side .brand span{font-size:.82rem;color:var(--sidemuted)}
+.side .grp{padding:14px 20px 4px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sidemuted)}
+.side a{display:flex;gap:10px;align-items:baseline;padding:8px 20px;color:var(--sideink);text-decoration:none;border-left:4px solid transparent;font-size:.95rem}
+.side a small{display:block;color:var(--sidemuted);font-size:.78rem}
+.side a .dn{flex:0 0 46px;font-weight:700;font-variant-numeric:tabular-nums;color:#f0b49a}
+.side a:hover{background:rgba(255,255,255,.06)}
+.side a.active{background:rgba(255,255,255,.1);border-left-color:var(--sideactive);color:#fff}
+.main{margin-left:270px;flex:1;min-width:0}
+.topbar{display:none}
+.panelwrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
+html.js .panel{display:none}
+html.js .panel.on{display:block}
+.panel{animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* hero */
+.hero{position:relative;margin:0 -20px 22px;min-height:260px;background:#222 center/cover no-repeat;color:#fff;display:flex;align-items:flex-end}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.72))}
+.hero .txt{position:relative;padding:22px 24px 20px;width:100%}
+.hero .date{font-weight:700;letter-spacing:.04em;color:#ffcfb8;font-size:.95rem}
+.hero h1{margin:2px 0 4px;font-size:clamp(1.7rem,4.6vw,2.5rem);line-height:1.12}
+.hero p{margin:0;font-size:.95rem;color:#f0ece4}
+.hero .credit{position:absolute;right:10px;top:8px;font-size:.7rem;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:99px;z-index:2}
+.hero .credit a{color:#fff}
+h2{font-size:1.4rem;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:1.08rem;margin:18px 0 6px}
+.box{border-radius:10px;padding:12px 16px;margin:14px 0;border:1px solid var(--line);background:var(--card)}
+.warn{background:var(--warn-bg);border-color:var(--warn-line)}
+.ok{background:var(--ok-bg);border-color:var(--ok-line)}
+.box p{margin:6px 0}
+.box ul{margin:6px 0 6px 18px;padding:0}
+.small{font-size:.88rem;color:var(--muted)}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:14px 0 18px}
+.gallery figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:zoom-in}
+.gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#ddd}
+.gallery figcaption{padding:7px 10px 8px;font-size:.84rem;line-height:1.35}
+.gallery figcaption .src{display:block;font-size:.72rem;color:var(--muted);margin-top:2px}
+/* timeline */
+.tl{list-style:none;margin:8px 0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.tl li{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:10px 14px;border-bottom:1px dashed var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl .t{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent2)}
+.tl .drive{color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted);margin-left:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.85rem}
+.chip b{color:var(--accent)}
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:30px}
+.pager a{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);text-decoration:none}
+/* tables */
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:.93rem}
+th,td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:rgba(127,127,127,.1);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.checklist{columns:2 280px;column-gap:28px;list-style:none;padding:0;margin:8px 0}
+.checklist li{break-inside:avoid;padding:3px 0}
+.checklist label{cursor:pointer}
+.checklist input{margin-right:8px}
+.cover{margin:0 -20px 18px;padding:46px 26px 34px;background:linear-gradient(135deg,#b4441f,#2a6f77);color:#fff}
+.cover h1{margin:0 0 8px;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1}
+.cover p{margin:0;opacity:.92}
+.daygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:16px 0}
+.daycard{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.daycard .im{height:120px;background:#ccc center/cover}
+.daycard .tx{padding:8px 12px 10px}
+.daycard .tx b{display:block}
+.daycard .tx span{font-size:.82rem;color:var(--muted)}
+.daycard:hover{border-color:var(--accent)}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:100;flex-direction:column;padding:16px}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:80vh;border-radius:6px}
+#lb .cap{color:#eee;margin-top:10px;font-size:.92rem;max-width:900px;text-align:center}
+#lb button{position:absolute;top:12px;right:14px;background:#fff;border:0;border-radius:99px;width:38px;height:38px;font-size:1.2rem;cursor:pointer}
+/* mobile */
+@media (max-width:900px){
+  .side{transform:translateX(-100%)}
+  body.menu .side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.5)}
+  .main{margin-left:0}
+  .topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:20;background:var(--side);color:#fff;padding:10px 14px}
+  .topbar button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:8px;padding:6px 12px;font-size:1.1rem;cursor:pointer}
+  .topbar span{font-weight:600}
+  .tl li{grid-template-columns:62px 1fr}
+}
+/* print */
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}
+  :root{--card:#fff;--ink:#000;--muted:#444;--line:#bbb}
+  .side,.topbar,.pager,#lb{display:none!important}
+  .main{margin:0}
+  html.js .panel{display:block!important;break-before:page}
+  html.js .panel:first-child{break-before:auto}
+  .hero{min-height:150px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .tl,.box,figure,tr{break-inside:avoid}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="app">
+
+<!-- ============ MENU ============ -->
+<nav class="side" id="side">
+  <div class="brand"><b>Andaluzja 2026</b><span>29.10 – 7.11 · Benalmádena</span></div>
+  <div class="grp">Start</div>
+  <a href="#start" data-p="start"><span class="dn">★</span><span>Start i najważniejsze<small>zmiany w planie</small></span></a>
+  <a href="#przeglad" data-p="przeglad"><span class="dn">▦</span><span>Przegląd 10 dni<small>mapa dni i dojazdy</small></span></a>
+  <div class="grp">Dzień po dniu</div>
+  <a href="#d1" data-p="d1"><span class="dn">29.10</span><span>Przylot<small>czwartek</small></span></a>
+  <a href="#d2" data-p="d2"><span class="dn">30.10</span><span>Málaga<small>piątek</small></span></a>
+  <a href="#d3" data-p="d3"><span class="dn">31.10</span><span>Nerja i Frigiliana<small>sobota</small></span></a>
+  <a href="#d4" data-p="d4"><span class="dn">1.11</span><span>Benalmádena<small>niedziela, święto</small></span></a>
+  <a href="#d5" data-p="d5"><span class="dn">2.11</span><span>Mijas i Teleférico<small>poniedziałek, święto</small></span></a>
+  <a href="#d6" data-p="d6"><span class="dn">3.11</span><span>Setenil i Ronda<small>wtorek</small></span></a>
+  <a href="#d7" data-p="d7"><span class="dn">4.11</span><span>Córdoba<small>środa</small></span></a>
+  <a href="#d8" data-p="d8"><span class="dn">5.11</span><span>Gibraltar<small>czwartek</small></span></a>
+  <a href="#d9" data-p="d9"><span class="dn">6.11</span><span>Bolonia i Tarifa<small>piątek</small></span></a>
+  <a href="#d10" data-p="d10"><span class="dn">7.11</span><span>Wyjazd<small>sobota</small></span></a>
+  <div class="grp">Narzędzia</div>
+  <a href="#rezerwy" data-p="rezerwy"><span class="dn">⇄</span><span>Rezerwy<small>Antequera, Alhambra…</small></span></a>
+  <a href="#bilety" data-p="bilety"><span class="dn">🎟</span><span>Bilety i linki</span></a>
+  <a href="#auto" data-p="auto"><span class="dn">🚐</span><span>Auto i parkingi</span></a>
+  <a href="#pakowanie" data-p="pakowanie"><span class="dn">🧳</span><span>Co zabrać</span></a>
+  <a href="#praktyka" data-p="praktyka"><span class="dn">ℹ</span><span>Praktyczne</span></a>
+  <a href="#zrodla" data-p="zrodla"><span class="dn">📚</span><span>Źródła i zdjęcia</span></a>
+</nav>
+
+<div class="main">
+<div class="topbar"><button id="menubtn" aria-label="Menu">☰</button><span id="toptitle">Andaluzja 2026</span></div>
+<div class="panelwrap">
+
+<!-- ============ START ============ -->
+<section class="panel" id="p-start">
+  <div class="cover">
+    <h1>Andaluzja – przewodnik ze zdjęciami</h1>
+    <p>29.10 – 7.11.2026 · baza: Benalmádena · 2 dorosłych, 2 dzieci, 2 babcie · Toyota Proace 7-os.</p>
+  </div>
+  <p>Wybierz dzień w menu po lewej. W każdym dniu znajdziesz zdjęcia miejsc, plan godzinowy z dojazdami, ceny i linki do biletów. Kliknij zdjęcie, żeby je powiększyć.</p>
+
+  <h2>Najważniejsze zmiany w planie</h2>
+  <div class="box warn">
+    <p><strong>1. Długi weekend: 31.10 (sob) – 2.11 (pon).</strong> 1.11 to święto ogólnokrajowe (Wszystkich Świętych), a w Andaluzji wolny jest też poniedziałek 2.11. W tych dniach większość sklepów i supermarketów jest zamknięta, a atrakcje i drogi są zatłoczone.</p>
+    <ul>
+      <li><strong>Zakupy spożywcze zrób najpóźniej w sobotę 31.10.</strong></li>
+      <li>Dlatego w święta jest lżejszy program blisko bazy, Ronda wypada we wtorek, a Córdoba w środę (pełne godziny otwarcia Mezquity).</li>
+    </ul>
+  </div>
+  <div class="box warn">
+    <p><strong>2. Kolejka linowa w Gibraltarze jest zamknięta do 2027.</strong> Na Upper Rock wjeżdża się taksówką-minibusem z granicy albo wchodzi pieszo (dzień 5.11).</p>
+  </div>
+  <div class="box warn">
+    <p><strong>3. Alhambra wymaga rezerwacji z góry.</strong> Bilety są imienne i sprzedawane tylko online, a sprzedaż kończy się o 23:59 dzień wcześniej. Nie ma jej w głównym planie, ale jest w zakładce „Rezerwy”. Jeśli chcesz ją zobaczyć, sprawdź dostępność <strong>dzisiaj</strong>.</p>
+  </div>
+  <div class="box">
+    <p><strong>4. Zmiana czasu już była</strong> (niedziela 25.10). Słońce zachodzi ok. 18:15, więc <strong>po 18:30 jest ciemno</strong>. Kręte drogi górskie pokonuj za dnia.</p>
+  </div>
+  <div class="gallery" data-photos="start"></div>
+</section>
+
+<!-- ============ PRZEGLĄD ============ -->
+<section class="panel" id="p-przeglad">
+  <h2 style="margin-top:20px">Przegląd 10 dni</h2>
+  <div class="daygrid" id="daygrid"></div>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Data</th><th>Dzień</th><th>Cel</th><th>Jazda w jedną stronę*</th></tr>
+    <tr><td>29.10</td><td>czw</td><td>Przylot, odbiór auta, zakwaterowanie</td><td>–</td></tr>
+    <tr><td>30.10</td><td>pt</td><td>Málaga</td><td>ok. 25 min</td></tr>
+    <tr><td>31.10</td><td>sob</td><td>Cueva de Nerja + Frigiliana</td><td>ok. 1 h 05</td></tr>
+    <tr><td>1.11</td><td>nd (święto)</td><td>Benalmádena Pueblo, Stupa, port, ewentualnie Sea Life</td><td>blisko bazy</td></tr>
+    <tr><td>2.11</td><td>pon (święto)</td><td>Mijas Pueblo + Teleférico Benalmádena</td><td>do 25 min</td></tr>
+    <tr><td>3.11</td><td>wt</td><td>Setenil de las Bodegas + Ronda</td><td>ok. 1 h 40 (Setenil)</td></tr>
+    <tr><td>4.11</td><td>śr</td><td>Córdoba (Mezquita, Judería, Alcázar)</td><td>ok. 2 h</td></tr>
+    <tr><td>5.11</td><td>czw</td><td>Gibraltar</td><td>ok. 1 h 45</td></tr>
+    <tr><td>6.11</td><td>pt</td><td>Bolonia (Baelo Claudia) + Tarifa</td><td>ok. 2 h 10</td></tr>
+    <tr><td>7.11</td><td>sob</td><td>Wyjazd</td><td>–</td></tr>
+  </table>
+  </div>
+  <p class="small">* Czasy orientacyjne, bez korków i postojów. Dolicz 15–20 min na każdą godzinę jazdy (babcie, dzieci, toalety). Sprawdź je w nawigacji dzień wcześniej.</p>
+</section>
+
+<!-- ============ DZIEŃ 1 ============ -->
+<section class="panel" id="p-d1">
+  <div class="hero" data-hero="d1"><div class="txt"><div class="date">Czwartek 29.10</div><h1>Przylot i zakwaterowanie</h1><p>Dzień bez sztywnego planu, bo nie znam godzin lotu.</p></div></div>
+  <ul class="tl">
+    <li><span class="t">po lądowaniu</span><span>Odbiór auta Proace. Sprawdź fotelik/podkładki dla dzieci, trójkąty i kamizelki, stan paliwa i zrób zdjęcia uszkodzeń.</span></li>
+    <li><span class="t">wieczór</span><span>Zakwaterowanie w Benalmádenie, spacer przy parku nad morzem, kolacja blisko noclegu.</span></li>
+    <li><span class="t">jeśli zdążysz</span><span>Szybkie zakupy na pierwsze dni (woda, śniadania, przekąski do auta). Kolejne okazje są w piątek i sobotę, potem święta.</span></li>
+  </ul>
+  <div class="gallery" data-photos="d1"></div>
+</section>
+
+<!-- ============ DZIEŃ 2 ============ -->
+<section class="panel" id="p-d2">
+  <div class="hero" data-hero="d2"><div class="txt"><div class="date">Piątek 30.10</div><h1>Málaga</h1><p>Alcazaba, teatr rzymski, katedra i tapas na targu.</p></div></div>
+  <div class="chips"><span class="chip">🚗 <b>25 min</b> w jedną stronę</span><span class="chip">🏰 Alcazaba <b>9:00–18:00</b></span><span class="chip">🎟 ok. <b>3,50 €</b></span></div>
+  <div class="gallery" data-photos="d2"></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">9:15</span><span class="drive">Wyjazd z Benalmádeny (A-7 / AP-7).</span></li>
+    <li><span class="t">9:45</span><span>Parking podziemny w centrum (np. okolice Alcazabilla / Cervantes). Sprawdź limit wysokości, bo Proace ma ok. 1,9–2,0 m.</span></li>
+    <li><span class="t">10:00</span><span><strong>Alcazaba</strong> (ok. 1,5 h). Dla babć: wejście <strong>windą</strong> od ulicy Guillén Sotelo (naprzeciw ratusza) oszczędza większość podejścia. Ostatnie wejście 45 min przed zamknięciem.</span></li>
+    <li><span class="t">11:45</span><span><strong>Teatro Romano</strong> u stóp Alcazaby (darmowe, krótko).</span></li>
+    <li><span class="t">12:15</span><span>Spacer: Calle Larios, Katedra (z zewnątrz lub z wejściem), Plaza de la Constitución.</span></li>
+    <li><span class="t">14:00</span><span>Obiad: Mercado de Atarazanas (stoiska z tapas) lub restauracje na bocznych uliczkach. Przed 13:30 łatwiej o stolik.</span></li>
+    <li><span class="t">15:30</span><span>Port <strong>Muelle Uno</strong> i Paseo del Parque – spacer i plac zabaw dla dzieci.</span></li>
+    <li><span class="t">17:00</span><span class="drive">Powrót do Benalmádeny.</span></li>
+  </ul>
+  <p class="small">Opcjonalnie: Zamek Gibralfaro (stromo, wysiłek dla babć, ale piękne widoki). Bilet łączony Alcazaba + Gibralfaro jest tańszy niż osobne.</p>
+</section>
+
+<!-- ============ DZIEŃ 3 ============ -->
+<section class="panel" id="p-d3">
+  <div class="hero" data-hero="d3"><div class="txt"><div class="date">Sobota 31.10</div><h1>Cueva de Nerja i Frigiliana</h1><p>Jaskinia, białe miasteczko i promenada nad morzem.</p></div></div>
+  <div class="chips"><span class="chip">🚗 <b>1 h 05</b> w jedną stronę</span><span class="chip">🕳 jaskinia <b>9:30–16:30</b> (ostatnie wejście 15:30)</span><span class="chip">🎟 dorosły ok. <b>15 €</b></span></div>
+  <div class="gallery" data-photos="d3"></div>
+  <div class="box warn"><p><strong>Początek długiego weekendu = tłumy.</strong> Kup bilety do jaskini online wcześniej, bo mogą się wyprzedać. Zrób też zakupy na niedzielę i poniedziałek.</p></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">8:15</span><span class="drive">Wyjazd (A-7 na wschód).</span></li>
+    <li><span class="t">9:30</span><span><strong>Cueva de Nerja</strong> – przyjedź na otwarcie. Zwiedzanie ok. 45–60 min. <em>Uwaga: dużo schodów</em>, więc buty z dobrą przyczepnością. Audioguide można pobrać na telefon (zabierz słuchawki).</span></li>
+    <li><span class="t">11:00</span><span>Kawa i przerwa przy jaskini (są punkty gastronomiczne).</span></li>
+    <li><span class="t">11:45</span><span class="drive">Dojazd do Frigiliany (ok. 15–20 min). Zaparkuj przy wejściu do miasteczka, dalej pieszo.</span></li>
+    <li><span class="t">12:15</span><span><strong>Frigiliana</strong> – białe uliczki, ceramika, widoki. Strome, kamienne uliczki, więc babcie niech idą dolną częścią.</span></li>
+    <li><span class="t">13:45</span><span>Obiad we Frigilianie lub w Nerji.</span></li>
+    <li><span class="t">15:30</span><span><strong>Balcón de Europa</strong> w Nerji, spacer promenadą, lody.</span></li>
+    <li><span class="t">16:45</span><span class="drive">Powrót. Ok. 18:00 w bazie.</span></li>
+    <li><span class="t">wieczorem</span><span><strong>Zakupy na niedzielę i poniedziałek</strong> (supermarket w drodze powrotnej, przed zamknięciem).</span></li>
+  </ul>
+</section>
+
+<!-- ============ DZIEŃ 4 ============ -->
+<section class="panel" id="p-d4">
+  <div class="hero" data-hero="d4"><div class="txt"><div class="date">Niedziela 1.11 · święto</div><h1>Benalmádena – dzień lżejszy</h1><p>Regeneracja po dwóch wyjazdach, wszystko blisko bazy.</p></div></div>
+  <div class="gallery" data-photos="d4"></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">10:30</span><span>Spokojne śniadanie, plaża albo <strong>Parque de la Paloma</strong>.</span></li>
+    <li><span class="t">12:00</span><span><strong>Benalmádena Pueblo</strong> – Plaza de España, mirador, białe uliczki. W pobliżu jest <strong>Stupa Oświecenia</strong> (darmowa, ciekawa dla dzieci).</span></li>
+    <li><span class="t">14:00</span><span>Obiad (zarezerwuj stolik – w święto lokale są pełne).</span></li>
+    <li><span class="t">16:00</span><span><strong>Puerto Marina</strong> – port, spacer, lody. Opcja dla dzieci: <strong>Sea Life Benalmádena</strong> (sprawdź godziny na stronie, w święta bywa wcześniejsze zamknięcie).</span></li>
+  </ul>
+  <div class="box"><p>Sklepy są dziś zamknięte, więc jedzenie na wieczór miej z poprzedniego dnia lub zarezerwuj kolację.</p></div>
+</section>
+
+<!-- ============ DZIEŃ 5 ============ -->
+<section class="panel" id="p-d5">
+  <div class="hero" data-hero="d5"><div class="txt"><div class="date">Poniedziałek 2.11 · święto</div><h1>Mijas Pueblo i Teleférico Benalmádena</h1><p>Białe miasteczko rano, widoki z Monte Calamorro po południu.</p></div></div>
+  <div class="chips"><span class="chip">🚗 do <b>25 min</b></span><span class="chip">🚡 Monte Calamorro <b>769 m</b></span><span class="chip">🎟 online od <b>12,90 €</b> (dziecko 9,90 €)</span></div>
+  <div class="gallery" data-photos="d5"></div>
+  <div class="box warn"><p>Przy silnym wietrze kursy kolejki są wstrzymywane. <strong>Rano sprawdź stronę lub zadzwoń (952 577 773).</strong></p></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">10:00</span><span class="drive">Dojazd do Mijas Pueblo (ok. 25 min).</span></li>
+    <li><span class="t">10:30</span><span><strong>Mijas Pueblo</strong> – białe miasteczko, tarasy widokowe, Ermita de la Virgen de la Peña, przejażdżka osiołkami („burro taxi”) dla dzieci.</span></li>
+    <li><span class="t">13:00</span><span>Obiad w Mijas (rezerwacja!).</span></li>
+    <li><span class="t">15:00</span><span class="drive">Powrót do Benalmádeny.</span></li>
+    <li><span class="t">15:30</span><span><strong>Teleférico Benalmádena</strong> – na górze tarasy widokowe i pokazy ptaków drapieżnych. Parking przy dolnej stacji darmowy.</span></li>
+    <li><span class="t">ok. 17:30</span><span>Zejście, kolacja blisko bazy.</span></li>
+  </ul>
+  <p class="small">Mniej tłoku? Zamiast tego możesz pojechać do Antequery i El Torcal (patrz „Rezerwy”).</p>
+</section>
+
+<!-- ============ DZIEŃ 6 ============ -->
+<section class="panel" id="p-d6">
+  <div class="hero" data-hero="d6"><div class="txt"><div class="date">Wtorek 3.11</div><h1>Setenil de las Bodegas i Ronda</h1><p>Domy wbudowane w skałę i most nad przepaścią.</p></div></div>
+  <div class="chips"><span class="chip">🚗 Setenil <b>1 h 40</b></span><span class="chip">↔ Setenil–Ronda <b>20 min</b></span><span class="chip">🌄 powrót A-397 <b>kręta</b></span></div>
+  <div class="gallery" data-photos="d6"></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">8:00</span><span class="drive">Wyjazd. Dla osób wrażliwych: tabletki na chorobę lokomocyjną przed wyjazdem.</span></li>
+    <li><span class="t">9:45</span><span>Parkowanie przy <strong>Setenil de las Bodegas</strong>, najlepiej na darmowym parkingu przy boisku. Nie wjeżdżaj w wąskie uliczki centrum, bo Proace tam nie zawsze się zmieści.</span></li>
+    <li><span class="t">10:00</span><span><strong>Setenil</strong> – ulice Cuevas del Sol i Cuevas de la Sombra. Zwiedzanie z kawą ok. 1,5–2 h.</span></li>
+    <li><span class="t">12:00</span><span class="drive">Przejazd do Rondy (ok. 20 min).</span></li>
+    <li><span class="t">12:30</span><span>Parking w centrum Rondy (podziemny lub przy Plaza del Socorro / Mercado – sprawdź wysokość).</span></li>
+    <li><span class="t">13:00</span><span>Obiad w Rondzie (kuchnia z gór: ogon wołowy, jagnięcina).</span></li>
+    <li><span class="t">14:30</span><span><strong>Puente Nuevo</strong> (widok z mirador), Jardines de Cuenca, Plaza de Toros (jedna z najstarszych w Hiszpanii), Baños Árabes.</span></li>
+    <li><span class="t">16:30</span><span class="drive">Wyjazd z Rondy. Dojazd do bazy ok. 18:00–18:15, czyli o zmierzchu.</span></li>
+  </ul>
+</section>
+
+<!-- ============ DZIEŃ 7 ============ -->
+<section class="panel" id="p-d7">
+  <div class="hero" data-hero="d7"><div class="txt"><div class="date">Środa 4.11</div><h1>Córdoba</h1><p>Las kolumn w Mezquicie, kwiatowe zaułki Judería i most rzymski.</p></div></div>
+  <div class="chips"><span class="chip">🚗 <b>2 h</b> w jedną stronę</span><span class="chip">🕌 Mezquita bilet <b>15 €</b> (ulgowy 12 €)</span></div>
+  <div class="gallery" data-photos="d7"></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">7:15</span><span class="drive">Wyjazd (A-45 przez Antequerę). Śniadanie z auta lub postój po godzinie.</span></li>
+    <li><span class="t">9:30</span><span>Parking: <strong>Saba Vallellano</strong> (dobry na cały dzień, 10–15 min pieszo) lub <strong>Parking la Mezquita</strong> w Judería (najbliżej, ok. 1,80 €/h). Centrum historyczne ma ograniczenia wjazdu.</span></li>
+    <li><span class="t">10:00</span><span><strong>Mezquita-Catedral</strong> (ok. 1,5 h). Bilet z góry na oficjalnej stronie, bo kolejki do kas bywają długie. Sprawdź godziny w narzędziu na stronie, bo źródła podają je różnie. <span class="tag">Darmowe wejście ok. 8:30–9:20 jest nieoficjalne</span></span></li>
+    <li><span class="t">11:45</span><span>Spacer po <strong>Judería</strong>: Calleja de las Flores, Synagoga (mała, tania), Plaza de las Tendillas.</span></li>
+    <li><span class="t">13:30</span><span>Obiad: salmorejo, flamenquín, rabo de toro.</span></li>
+    <li><span class="t">15:00</span><span><strong>Alcázar de los Reyes Cristianos</strong> – ogrody (ładne dla dzieci), Torre de los Leones. Sprawdź godziny wcześniej.</span></li>
+    <li><span class="t">16:15</span><span><strong>Puente Romano</strong> i Torre de la Calahorra – spacer nad Gwadalkiwirem.</span></li>
+    <li><span class="t">16:45</span><span class="drive">Wyjazd. W bazie ok. 19:00 (po zmroku, ale droga szybkiego ruchu).</span></li>
+  </ul>
+</section>
+
+<!-- ============ DZIEŃ 8 ============ -->
+<section class="panel" id="p-d8">
+  <div class="hero" data-hero="d8"><div class="txt"><div class="date">Czwartek 5.11</div><h1>Gibraltar</h1><p>Skała, małpy, tunele i widok na Afrykę.</p></div></div>
+  <div class="chips"><span class="chip">🚗 <b>1 h 45</b> do La Línea</span><span class="chip">🪨 Upper Rock <b>9:00–18:00</b></span><span class="chip">🎟 dorosły <b>30 £</b>, dziecko <b>22 £</b></span><span class="chip">🚡 kolejka <b>zamknięta</b></span></div>
+  <div class="gallery" data-photos="d8"></div>
+  <div class="box warn">
+    <p><strong>Dokumenty:</strong> zabierz paszporty lub dowody <strong>wszystkich</strong> uczestników, także dzieci. Według źródeł od 15.07.2026 zniesiono rutynowe kontrole na przejściu La Línea – Gibraltar, ale zasady były ostatnio zmieniane, więc sprawdź aktualny komunikat przed wyjazdem (linki w zakładce „Źródła”).</p>
+  </div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">7:45</span><span class="drive">Wyjazd (AP-7 / A-7 w stronę Algeciras, zjazd na La Línea).</span></li>
+    <li><span class="t">9:30</span><span>Zostaw auto w <strong>La Línea</strong> (parkingi przy przejściu) i przejdź pieszo. Auto w Gibraltarze oznacza korki i brak miejsc.</span></li>
+    <li><span class="t">10:00</span><span>Przejście przez pas startowy lotniska (Winston Churchill Avenue) – samoloty lądują tuż obok.</span></li>
+    <li><span class="t">10:15</span><span><strong>Upper Rock Nature Reserve</strong> – dla babć polecam <strong>Private Taxi Tour</strong> (odjazdy z granicy co 15 min, 9:30–15:30). W pakiecie: <strong>Jaskinia św. Michała, Apes’ Den (makaki), Great Siege Tunnels, Skywalk</strong>. Zakaz karmienia małp, trzymaj torby zamknięte.</span></li>
+    <li><span class="t">13:30</span><span>Obiad na Main Street / Casemates Square.</span></li>
+    <li><span class="t">15:00</span><span><strong>Europa Point</strong> (latarnia, widok na Afrykę) – autobusem lub taksówką.</span></li>
+    <li><span class="t">16:45</span><span>Powrót do granicy i do auta.</span></li>
+    <li><span class="t">17:30</span><span class="drive">Wyjazd z La Línea, ok. 19:15 w bazie.</span></li>
+  </ul>
+  <p class="small">Waluta: funt gibraltarski (GBP); euro są przyjmowane po gorszym kursie. Gibraltar nie jest w UE, więc sprawdź roaming u operatora albo wyłącz transmisję danych.</p>
+</section>
+
+<!-- ============ DZIEŃ 9 ============ -->
+<section class="panel" id="p-d9">
+  <div class="hero" data-hero="d9"><div class="txt"><div class="date">Piątek 6.11</div><h1>Bolonia (Baelo Claudia) i Tarifa</h1><p>Rzymskie miasto nad oceanem, wydma i brama do Maroka.</p></div></div>
+  <div class="chips"><span class="chip">🚗 <b>2 h 10</b> do Bolonii</span><span class="chip">🏛 Baelo Claudia: wstęp <b>darmowy dla UE</b></span><span class="chip">⏱ najdłuższy dzień jazdy</span></div>
+  <div class="gallery" data-photos="d9"></div>
+  <h2>Plan godzinowy</h2>
+  <ul class="tl">
+    <li><span class="t">8:15</span><span class="drive">Wyjazd (AP-7 / N-340 w stronę Tarifa, zjazd na Bolonię CA-8202).</span></li>
+    <li><span class="t">10:30</span><span><strong>Baelo Claudia</strong> – rzymskie miasto nad morzem: forum, teatr, bazylika, fabryka garum. Zwiedzanie ok. 1–1,5 h. Zabierz wodę i nakrycie głowy. Sprawdź godziny na oficjalnej stronie (przy silnym wietrze Levante mogą się zmienić).</span></li>
+    <li><span class="t">12:00</span><span><strong>Duna de Bolonia</strong> i plaża – krótki spacer, dzieci uwielbiają wydmę.</span></li>
+    <li><span class="t">13:00</span><span>Obiad w jednej z knajpek przy plaży w Bolonii.</span></li>
+    <li><span class="t">14:30</span><span class="drive">Przejazd do Tarify (ok. 25 min).</span></li>
+    <li><span class="t">15:00</span><span><strong>Tarifa</strong> – stare miasto, Puerta de Jerez, zamek Guzmán el Bueno, widok na Maroko, Playa Chica. Parking przy murach lub na obrzeżach.</span></li>
+    <li><span class="t">16:45</span><span class="drive">Wyjazd. W bazie ok. 19:00 (po zmroku).</span></li>
+  </ul>
+  <p class="small">Skrót dla zmęczonych: pomiń Bolonię, zostań w Tarifie i wstąp po drodze do <strong>Mirador del Estrecho</strong>. Oszczędzasz ok. godzinę jazdy.</p>
+</section>
+
+<!-- ============ DZIEŃ 10 ============ -->
+<section class="panel" id="p-d10">
+  <div class="hero" data-hero="d10"><div class="txt"><div class="date">Sobota 7.11</div><h1>Wyjazd</h1><p>Pakowanie, zwrot auta i lot do domu.</p></div></div>
+  <ul class="tl">
+    <li><span class="t">rano</span><span>Pakowanie, sprzątanie, tankowanie przed zwrotem auta (pełny bak, jeśli wymaga umowa), zwrot Proace.</span></li>
+    <li><span class="t">na lotnisku</span><span>Dojazd do lotniska w Maladze ok. 20 min z Benalmádeny. Zaplanuj zapas 3 h przed odlotem.</span></li>
+  </ul>
+  <div class="box ok"><p>Ostatnia szansa na pamiątki: Mercado w Benalmádenie lub sklepy w porcie. Sprawdź limity bagażu na płyny i na ceramikę.</p></div>
+</section>
+
+<!-- ============ REZERWY ============ -->
+<section class="panel" id="p-rezerwy">
+  <h2 style="margin-top:20px">Rezerwy (jeśli pogoda lub nastroje zmienią plan)</h2>
+  <div class="gallery" data-photos="r"></div>
+  <div class="box">
+    <ul>
+      <li><strong>Antequera + El Torcal</strong> (ok. 1 h jazdy): dolmeny, Alcazaba, formacje skalne El Torcal. Dobre przy dobrej pogodzie, bo skały w deszczu są śliskie.</li>
+      <li><strong>Granada + Alhambra</strong> (ok. 1 h 30): tylko z biletami kupionymi z góry. Rozważ w miejsce Córdoby (4.11).</li>
+      <li><strong>Sewilla</strong> zamiast Córdoby (ok. 2 h 30): efektowniejsza, ale dłuższa jazda i więcej chodzenia.</li>
+      <li>Gdy pada: <strong>Muzeum Picassa</strong> w Maladze, Sea Life Benalmádena, Muzeum Carmen Thyssen.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BILETY ============ -->
+<section class="panel" id="p-bilety">
+  <h2 style="margin-top:20px">Bilety i linki</h2>
+  <p class="small">Ceny i godziny zebrałem z oficjalnych stron i serwisów turystycznych. Zawsze potwierdź je przed zakupem. Kupuj na oficjalnych stronach (poniżej) – w wyszukiwarce na początku pojawiają się odsprzedawcy z narzutem.</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Atrakcja</th><th>Kiedy</th><th>Co wiedzieć</th><th>Link</th></tr>
+    <tr><td><strong>Cueva de Nerja</strong></td><td>31.10</td><td>Otwarte 9:30–16:30 (ostatnie wejście 15:30). Dorosły ok. 15 €, dziecko 6–12 lat ok. 13 €, do 5 lat bezpłatnie. Online taniej i bez kolejki.</td><td><a href="https://entradas.cuevadenerja.es/es/152-web-individual/">kup bilety</a> · <a href="https://www.cuevadenerja.es/">strona</a></td></tr>
+    <tr><td><strong>Mezquita-Catedral</strong></td><td>4.11</td><td>Standardowy 15 €, ulgowy 12 € (65+, studenci). Sprawdź zniżki dla dzieci i aktualne godziny w narzędziu na stronie.</td><td><a href="https://www.mezquita-catedraldecordoba.es/en/organiza-la-visita/entradas-y-horarios/">bilety i godziny</a></td></tr>
+    <tr><td><strong>Upper Rock, Gibraltar</strong></td><td>5.11</td><td>Dorosły 30 £, dziecko 22 £, ważny jeden dzień. Taksówki-minibusy z granicy 9:30–15:30 co 15 min. Kolejka linowa zamknięta.</td><td><a href="https://naturereserve.gi/tickets">bilety</a> · <a href="https://naturereserve.gi/experiences/cable-car/">info o kolejce</a></td></tr>
+    <tr><td><strong>Teleférico Benalmádena</strong></td><td>2.11</td><td>Online dorośli od ok. 12,90 €, dzieci 3–10 lat ok. 9,90 €. Przy złej pogodzie kursy wstrzymane (tel. 952 577 773).</td><td><a href="https://www.telefericobenalmadena.com/">strona</a></td></tr>
+    <tr><td><strong>Alcazaba, Málaga</strong></td><td>30.10</td><td>Otwarte 9:00–18:00 (zimą). Bilet ok. 3,50 € (dzieci powyżej 6 lat 1,50 €, do 6 lat gratis). Bilet łączony z Gibralfaro tańszy.</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Alcazaba+M%C3%A1laga">mapa</a> · bilety: strona turystyczna miasta Málaga („Alcazaba entradas”)</td></tr>
+    <tr><td><strong>Baelo Claudia</strong></td><td>6.11</td><td>Wstęp darmowy dla obywateli UE (z dokumentem). Wejście do 30 min przed zamknięciem.</td><td><a href="https://www.andalucia.org/en/tarifa-cultural-tourism-conjunto-arqueologico-de-baelo-claudia">andalucia.org</a></td></tr>
+    <tr><td><strong>Alhambra</strong> (opcja)</td><td>np. 4.11</td><td>Ok. 22,27 €, do 12 lat bezpłatnie, bilet imienny. Online do 23:59 dzień wcześniej; zwrócone bilety pojawiają się ok. 20:00–22:00 wieczorem poprzedniego dnia.</td><td><a href="https://tickets.alhambra-patronato.es/">oficjalna sprzedaż</a> · <a href="https://entradas.granadatur.com/en">Granada Card</a></td></tr>
+    <tr><td><strong>Ronda, Setenil, Tarifa, Mijas, Frigiliana</strong></td><td>–</td><td>Spacer po miasteczkach jest bezpłatny. Płatne tylko wybrane obiekty (np. Plaza de Toros w Rondzie, Baños Árabes).</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Ronda+Puente+Nuevo">Ronda</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Setenil+de+las+Bodegas">Setenil</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Tarifa+casco+antiguo">Tarifa</a></td></tr>
+  </table>
+  </div>
+  <div class="box ok"><p><strong>Co kupić z góry (kolejność):</strong> 1) Cueva de Nerja (sobota, długi weekend), 2) Mezquita, 3) Upper Rock Gibraltar (opcjonalnie, można też na miejscu), 4) Teleférico. Alhambra tylko, jeśli zdecydujesz się na Granadę.</p></div>
+</section>
+
+<!-- ============ AUTO ============ -->
+<section class="panel" id="p-auto">
+  <h2 style="margin-top:20px">Auto i parkingi</h2>
+  <div class="box">
+    <ul>
+      <li><strong>Wysokość Proace</strong> to ok. 1,9–2,0 m, więc w podziemnych parkingach (Málaga, Ronda, Córdoba) szukaj znaku „altura máxima” i miej plan B (parking naziemny, na obrzeżach).</li>
+      <li><strong>Strefy niskiej emisji (ZBE)</strong> działają w centrach m.in. Málagi i Córdoby. Sprawdź, jaką etykietę DGT ma auto, i nie wjeżdżaj do centrum bez potrzeby.</li>
+      <li><strong>Fotelik / podkładki</strong> dla dzieci są obowiązkowe zgodnie z wzrostem i wagą dziecka.</li>
+      <li><strong>Wyposażenie obowiązkowe:</strong> dwa trójkąty ostrzegawcze, kamizelka odblaskowa, dowód rejestracyjny / umowa najmu.</li>
+      <li><strong>Opłaty:</strong> AP-7 w niektórych odcinkach jest płatna, A-7 darmowa. W nawigacji możesz wybrać „unikaj opłat”, ale czas się wydłuży.</li>
+      <li><strong>Tankowanie</strong> przed dłuższymi dniami (Córdoba, Gibraltar, Tarifa).</li>
+      <li><strong>Córdoba:</strong> Saba Vallellano (cały dzień) lub Parking la Mezquita (najbliżej, ok. 1,80 €/h).</li>
+      <li><strong>Setenil:</strong> darmowy parking przy boisku, bez wjeżdżania w wąskie uliczki.</li>
+      <li><strong>Gibraltar:</strong> auto zostaw w La Línea i przejdź pieszo.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PAKOWANIE ============ -->
+<section class="panel" id="p-pakowanie">
+  <h2 style="margin-top:20px">Co zabrać</h2>
+  <div class="box ok"><p>Lista jest do odhaczania na ekranie (zapamiętuje się w tej przeglądarce). Przy wydruku odhaczasz długopisem.</p></div>
+  <h3>Dokumenty i finanse</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">Paszporty lub dowody wszystkich (także dzieci, ważne na Gibraltar)</label></li>
+    <li><label><input type="checkbox">Karty EKUZ / ubezpieczenie podróżne (także babcie)</label></li>
+    <li><label><input type="checkbox">Prawo jazdy, umowa najmu / dokumenty auta</label></li>
+    <li><label><input type="checkbox">Potwierdzenia noclegu, lotów i biletów (offline na telefonie)</label></li>
+    <li><label><input type="checkbox">Karta płatnicza + trochę gotówki w euro (parkingi, małe knajpki)</label></li>
+    <li><label><input type="checkbox">Kilka funtów na Gibraltar (opcjonalnie)</label></li>
+  </ul>
+  <h3>Ubrania (w dzień ok. 20–23 °C na wybrzeżu, wieczorem chłodniej; sprawdź prognozę przed wyjazdem)</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">Warstwy: cienka kurtka lub polar na wieczory</label></li>
+    <li><label><input type="checkbox">Wygodne buty na bruk i schody (Nerja, Ronda, Frigiliana)</label></li>
+    <li><label><input type="checkbox">Lekka kurtka przeciwdeszczowa / parasol</label></li>
+    <li><label><input type="checkbox">Czapka z daszkiem, okulary przeciwsłoneczne, krem z filtrem</label></li>
+    <li><label><input type="checkbox">Strój kąpielowy (jeśli nocleg ma basen)</label></li>
+    <li><label><input type="checkbox">Na Córdobę: przykryte ramiona do Mezquity</label></li>
+  </ul>
+  <h3>W aucie i na dzień</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">Uchwyt i ładowarka do telefonu w aucie, powerbank</label></li>
+    <li><label><input type="checkbox">Woda, przekąski, mokre chusteczki</label></li>
+    <li><label><input type="checkbox">Plecak na dzień zwiedzania, torba na zakupy</label></li>
+    <li><label><input type="checkbox">Torebki i tabletki na chorobę lokomocyjną</label></li>
+    <li><label><input type="checkbox">Słuchawki do audioguide (Nerja)</label></li>
+  </ul>
+  <h3>Zdrowie i dzieci</h3>
+  <ul class="checklist">
+    <li><label><input type="checkbox">Leki stałe babć i dorosłych (z zapasem), recepty</label></li>
+    <li><label><input type="checkbox">Apteczka: przeciwbólowe, plastry, środek na biegunkę, leki dla dzieci</label></li>
+    <li><label><input type="checkbox">Gry/książki dla dzieci na dłuższe przejazdy (Córdoba, Tarifa)</label></li>
+    <li><label><input type="checkbox">Zapasowa para ubrań dla dzieci do auta</label></li>
+  </ul>
+</section>
+
+<!-- ============ PRAKTYKA ============ -->
+<section class="panel" id="p-praktyka">
+  <h2 style="margin-top:20px">Praktyczne wskazówki</h2>
+  <div class="box">
+    <ul>
+      <li><strong>Pora posiłków:</strong> obiad ok. 14:00–15:30, kolacja od 20:00–21:00. Wiele lokali zamyka kuchnię między 16 a 19. Dzieci i babcie jedzą wcześniej, więc zarezerwuj stolik lub jedz o 13:00.</li>
+      <li><strong>Siesta:</strong> małe sklepy w miasteczkach często zamykają się na 14:00–17:00.</li>
+      <li><strong>W święta (1–2.11)</strong> większość sklepów jest zamknięta, a restauracje zapełniają się. Rezerwuj obiady i kolacje.</li>
+      <li><strong>Tempo dla babć:</strong> przy każdym punkcie zaplanuj przerwę i ławkę. Najtrudniejsze: Alcazaba (winda ratuje), Frigiliana (stromo), Ronda (schody w dolinie), Gibraltar (taxi tour zamiast marszu).</li>
+      <li><strong>Bezpieczeństwo:</strong> nie zostawiaj rzeczy widocznych w aucie. W Gibraltarze pilnuj toreb (makaki kradną jedzenie).</li>
+      <li><strong>Pogoda:</strong> jeśli pada, zamień dzień na muzea (Málaga) lub Sea Life. Silny wiatr Levante w okolicy Tarify bywa męczący.</li>
+      <li><strong>Numer alarmowy w Hiszpanii:</strong> 112.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ŹRÓDŁA ============ -->
+<section class="panel" id="p-zrodla">
+  <h2 style="margin-top:20px">Źródła i zdjęcia</h2>
+  <ul class="small">
+    <li>Cueva de Nerja: <a href="https://www.taquilla.com/entradas/cueva-de-nerja">taquilla.com</a> (godziny i ceny 2026), <a href="https://www.cuevadenerja.es/">cuevadenerja.es</a></li>
+    <li>Mezquita: <a href="https://www.mezquita-catedraldecordoba.es/en/organiza-la-visita/entradas-y-horarios/">oficjalna strona</a>, <a href="https://www.artencordoba.com/en/mosque-cordoba/schedules-tourist-information/">artencordoba.com</a> (godziny; źródła podają je różnie)</li>
+    <li>Gibraltar: <a href="https://naturereserve.gi/tickets">naturereserve.gi</a>; granica: <a href="https://globalairporttaxi.com/gibraltar-border-crossing-guide">Gibraltar Border Crossing 2026</a>, <a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/789376/EPRS_BRI(2026)789376_EN.pdf">Parlament Europejski – umowa UE–UK</a></li>
+    <li>Alhambra: <a href="https://tickets.alhambra-patronato.es/">tickets.alhambra-patronato.es</a>, <a href="https://turismo.granada.org/en/what-do-if-there-are-no-alhambra-tickets-official-website">turismo.granada.org</a></li>
+    <li>Święta w Andaluzji 2026: <a href="https://andaluciainforma.eldiario.es/?p=35472">Andalucía Informa</a></li>
+    <li>Baelo Claudia: <a href="https://www.andalucia.org/en/tarifa-cultural-tourism-conjunto-arqueologico-de-baelo-claudia">andalucia.org</a></li>
+    <li>Teleférico Benalmádena: <a href="https://www.telefericobenalmadena.com/">oficjalna strona</a></li>
+    <li>Alcazaba Málaga: <a href="https://www.elviajedesofi.com/visita-a-la-alcazaba-de-malaga-precios-y-como-hacerla/">El Viaje de Sofi</a> (godziny i ceny; sprawdź na stronie miasta)</li>
+    <li>Parkingi Córdoba: <a href="https://auto-jardim.com/parking/spain-cordoba/">auto-jardim.com</a>; Setenil: <a href="https://girlonazebra.com/how-to-get-to-setenil-de-las-bodegas-spain/">girlonazebra.com</a></li>
+  </ul>
+  <h3>Zdjęcia</h3>
+  <p class="small">Wszystkie zdjęcia pochodzą z Wikimedia Commons (licencje wolne, m.in. CC BY, CC BY-SA, CC0, domena publiczna). Pod każdym zdjęciem jest link „źródło” do strony pliku z autorem i licencją. Zdjęcia ładują się z internetu, więc bez połączenia mogą się nie wyświetlić. Napisy opisują miejsce, a zdjęcie może pokazywać je z innego ujęcia lub pory roku.</p>
+  <p class="small">Czasy przejazdów, dostępność parkingów, prognozy pogody i niektóre ceny są orientacyjne i nie były weryfikowane w dniu wyjazdu. Przygotowano 24.10.2026.</p>
+</section>
+
+</div>
+</div>
+</div>
+
+<!-- lightbox -->
+<div id="lb" role="dialog" aria-modal="true"><button id="lbx" aria-label="Zamknij">×</button><img alt=""><div class="cap"></div></div>
+
+<script>
+(function(){
+/* ---------- zdjęcia ---------- */
+// t = miniatura na Commons (960 px), o = oryginał na Commons, en = plik z en.wikipedia
+var P={
+start:[["t:9/94/Da_Gibralfaro_%28cropped%292.jpg","Málaga widziana ze wzgórza Gibralfaro"],["t:c/c4/Telef%C3%A9rico_Benalm%C3%A1dena.jpg","Benalmádena: Teleférico na Monte Calamorro"],["t:6/6d/Setenil_de_las_Bodegas_-_Wallpaper.jpg","Setenil de las Bodegas"],["t:6/6c/Mezquita_de_C%C3%B3rdoba_desde_el_aire_%28C%C3%B3rdoba%2C_Espa%C3%B1a%29.jpg","Mezquita w Córdobie z lotu ptaka"]],
+d1:[["t:9/94/Da_Gibralfaro_%28cropped%292.jpg","Málaga widziana ze wzgórza Gibralfaro"],["t:c/c4/Telef%C3%A9rico_Benalm%C3%A1dena.jpg","Benalmádena: Teleférico na Monte Calamorro"]],
+d2:[["t:9/9d/Alcazaba_de_M%C3%A1laga_overview.jpg","Alcazaba w Maladze – twierdza-pałac z XI w."],["t:2/27/Patio_de_Surtidores_Alcazaba.jpg","Patio de Surtidores w Alcazabie"],["t:4/45/M%C3%A1laga_-_Teatro_Romano_y_Alcazaba_3.jpg","Teatr rzymski u stóp Alcazaby"],["o:6/61/Torrecatedralypalmeras.jpg","Katedra w Maladze i palmy"],["t:a/ab/Mercadoatarazana.jpg","Mercado de Atarazanas – targ z tapas"],["t:7/7e/Plaza_de_la_Constituci%C3%B3n%2C_M%C3%A1laga_003.JPG","Plaza de la Constitución"]],
+d3:[["t:f/f3/Cueva_de_Nerja_2020.jpg","Cueva de Nerja – wejście do jaskini"],["t:2/25/Frigiliana%2C_Spain.jpg","Frigiliana – białe miasteczko na wzgórzu"],["t:4/4d/Balc%C3%B3n_de_Europa_Nerja.jpg","Balcón de Europa w Nerji"],["t:9/96/Nerja.jpg","Nerja i wybrzeże Costa del Sol"]],
+d4:[["o:2/23/Stupa_Benalmadena_-_Oct_2003.jpg","Stupa Oświecenia w Benalmádenie"],["t:9/93/Paloma_Park_Benalm%C3%A1dena_%28cropped%29.JPG","Parque de la Paloma w Benalmádenie"],["t:3/38/Sea_Life_Benalm%C3%A1dena_A_117.JPG","Sea Life Benalmádena – akwarium dla dzieci"]],
+d5:[["en:6/6a/Mijas_street.jpg","Uliczka w Mijas"],["t:d/d0/Town_Mijas_in_Andalucia.jpg","Mijas Pueblo – białe miasteczko"],["t:c/c9/Ermita_de_la_Virgen_de_la_Pe%C3%B1a%2C_Mijas%2C_M%C3%A1laga%2C_Espa%C3%B1a%2C_2023-05-18%2C_DD_82.jpg","Ermita de la Virgen de la Peña w Mijas"],["t:9/9a/Seilbahn_Monte_Calamorro_-_52344570581.jpg","Kolejka linowa na Monte Calamorro"]],
+d6:[["t:6/6d/Setenil_de_las_Bodegas_-_Wallpaper.jpg","Setenil de las Bodegas – domy pod skałą"],["t:d/dc/Calle_del_sol_2.JPG","Calle del Sol w Setenil"],["t:0/00/Ronda_aerial.jpg","Ronda z lotu ptaka"],["t:a/a4/Punte_Nuevo_Bridge%2C_Ronda_-_Spain.jpg","Puente Nuevo w Rondzie"],["t:5/52/La_Plaza_de_Toros_-_panoramio_-_Itto_Ogami_%285%29.jpg","Plaza de Toros w Rondzie"],["t:3/3c/Arab_baths.jpg","Baños Árabes w Rondzie"]],
+d7:[["t:6/6c/Mezquita_de_C%C3%B3rdoba_desde_el_aire_%28C%C3%B3rdoba%2C_Espa%C3%B1a%29.jpg","Mezquita-Catedral z lotu ptaka"],["t:4/4a/Mezquita_cordoba_arco_interior.jpg","Wnętrze Mezquity – łuki z czerwono-białych cegieł"],["t:7/7e/Cordoba-28_%2848026695918%29.jpg","Calleja de las Flores"],["t:d/d5/Cordoba-6_%2848026780817%29.jpg","Alcázar de los Reyes Cristianos"],["t:0/01/Puente_Romano_Cordoba.jpg","Most rzymski w Córdobie"],["t:9/9e/Cordoba%2C_Spain_%2811174784126%29.jpg","Torre de la Calahorra"]],
+d8:[["t:6/6a/Gibraltar_View_of_the_Rock_from_La_Linea.jpg","Skała Gibraltarska widziana z La Línea"],["o:5/50/Rock_of_Gibraltar.jpg","Upper Rock Nature Reserve"],["t:6/62/Macaca_sylvanus.Mother_and_baby.jpg","Makaki magoty – dzikie małpy Gibraltaru"],["t:9/9f/Gibraltar_St._Michael%27s_Cave_interior_3.jpg","Jaskinia św. Michała"],["o:a/af/Great_Siege_Tunnels.jpg","Great Siege Tunnels"],["t:e/e6/Main_Street_Gibraltar.JPG","Main Street"],["t:b/b8/Gibraltar-Europa-Point-LH-from-the-sea.jpg","Latarnia na Europa Point"],["t:0/04/Gibraltar_Airport_New_Terminal.jpg","Lotnisko Gibraltar – tu przechodzi się przez pas startowy"]],
+d9:[["t:c/ce/Bas%C3%ADlica_Baelo_001.jpg","Baelo Claudia – rzymska bazylika"],["o:3/3c/Ensenada_de_Bolonia_MIN-DSC00372.JPG","Duna de Bolonia i zatoka"],["t:5/57/Beach_of_Bolonia_-_014_-_view.jpg","Plaża w Bolonii"],["o:f/f0/Tarifa_Puerta_de_Jerez2004.jpg","Puerta de Jerez w Tarifie"],["o:e/e2/Tarifa_Gasse_2004.jpg","Uliczka w starej Tarifie"],["o:3/3b/Tarifa_SPOT_1165.jpg","Tarifa i Isla de las Palomas (zdjęcie satelitarne)"]],
+d10:[["t:9/94/Da_Gibralfaro_%28cropped%292.jpg","Málaga – do zobaczenia"]],
+r:[["o:f/f9/Antequera_Gesamtansicht2004.jpg","Antequera"],["t:8/8a/Rocks_El_Torcal_de_Antequera_karst_Andalusia_Spain.jpg","El Torcal de Antequera"],["t:d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg","Alhambra w Granadzie o świcie"]]
+};
+function parse(s){var i=s.indexOf(':');return {k:s.slice(0,i),p:s.slice(i+1)};}
+function url(s){var o=parse(s),n=o.p.split('/').pop();
+  if(o.k==='o')return 'https://upload.wikimedia.org/wikipedia/commons/'+o.p;
+  if(o.k==='en')return 'https://upload.wikimedia.org/wikipedia/en/thumb/'+o.p+'/960px-'+n;
+  return 'https://upload.wikimedia.org/wikipedia/commons/thumb/'+o.p+'/960px-'+n;}
+function page(s){var o=parse(s),n=o.p.split('/').pop();
+  return o.k==='en'?'https://en.wikipedia.org/wiki/File:'+n:'https://commons.wikimedia.org/wiki/File:'+n;}
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+
+/* hero z pierwszego zdjęcia dnia */
+document.querySelectorAll('[data-hero]').forEach(function(h){
+  var a=P[h.getAttribute('data-hero')];if(!a)return;
+  h.style.backgroundImage='url("'+url(a[0][0])+'")';
+  var c=document.createElement('div');c.className='credit';
+  c.innerHTML='<a href="'+page(a[0][0])+'" target="_blank" rel="noopener">zdjęcie: Wikimedia Commons</a>';
+  h.appendChild(c);
+});
+/* galerie */
+document.querySelectorAll('.gallery').forEach(function(g){
+  var a=P[g.getAttribute('data-photos')]||[];
+  g.innerHTML=a.map(function(x,i){
+    return '<figure data-i="'+i+'"><img loading="lazy" src="'+url(x[0])+'" alt="'+esc(x[1])+'"><figcaption>'+esc(x[1])+
+      '<span class="src"><a href="'+page(x[0])+'" target="_blank" rel="noopener">źródło</a></span></figcaption></figure>';
+  }).join('');
+});
+/* karty przeglądu */
+var days=[["d1","29.10","Przylot","d1"],["d2","30.10","Málaga","d2"],["d3","31.10","Nerja i Frigiliana","d3"],["d4","1.11","Benalmádena (święto)","d4"],["d5","2.11","Mijas i Teleférico (święto)","d5"],["d6","3.11","Setenil i Ronda","d6"],["d7","4.11","Córdoba","d7"],["d8","5.11","Gibraltar","d8"],["d9","6.11","Bolonia i Tarifa","d9"],["d10","7.11","Wyjazd","d10"]];
+document.getElementById('daygrid').innerHTML=days.map(function(d){
+  return '<a class="daycard" href="#'+d[0]+'"><div class="im" style="background-image:url(\''+url(P[d[3]][0][0])+'\')"></div><div class="tx"><b>'+d[2]+'</b><span>'+d[1]+'</span></div></a>';
+}).join('');
+
+/* lightbox */
+var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbc=lb.querySelector('.cap');
+document.addEventListener('click',function(e){
+  var f=e.target.closest&&e.target.closest('.gallery figure');
+  if(f&&!e.target.closest('a')){var im=f.querySelector('img');lbi.src=im.src;lbc.textContent=im.alt;lb.classList.add('on');}
+  else if(e.target===lb||e.target.id==='lbx'){lb.classList.remove('on');}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+
+/* zakładki */
+var order=['start','przeglad','d1','d2','d3','d4','d5','d6','d7','d8','d9','d10','rezerwy','bilety','auto','pakowanie','praktyka','zrodla'];
+var dayNav=['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10'];
+var titles={},tops={};
+document.querySelectorAll('.side a[data-p]').forEach(function(a){
+  var sp=a.querySelectorAll(':scope > span'),nm=sp[1].firstChild.textContent.trim(),dn=sp[0].textContent.trim();
+  titles[a.dataset.p]=nm;tops[a.dataset.p]=/^\d/.test(dn)?dn+' · '+nm:nm;
+});
+function show(id){
+  if(order.indexOf(id)<0)id='start';
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='p-'+id);});
+  document.querySelectorAll('.side a').forEach(function(a){a.classList.toggle('active',a.dataset.p===id);});
+  document.getElementById('toptitle').textContent=tops[id]||'Andaluzja 2026';
+  document.body.classList.remove('menu');
+  window.scrollTo(0,0);
+  document.title=(tops[id]?tops[id]+' · ':'')+'Andaluzja 2026';
+}
+function route(){show((location.hash||'#start').slice(1));}
+window.addEventListener('hashchange',route);
+/* przyciski poprzedni/następny pod dniami */
+dayNav.forEach(function(id,i){
+  var el=document.getElementById('p-'+id);if(!el)return;
+  var prev=dayNav[i-1],next=dayNav[i+1];
+  var d=document.createElement('div');d.className='pager';
+  d.innerHTML=(prev?'<a href="#'+prev+'">← '+tops[prev]+'</a>':'<span></span>')+(next?'<a href="#'+next+'">'+tops[next]+' →</a>':'<span></span>');
+  el.appendChild(d);
+});
+document.getElementById('menubtn').addEventListener('click',function(){document.body.classList.toggle('menu');});
+document.querySelector('.main').addEventListener('click',function(){document.body.classList.remove('menu');});
+route();
+
+/* lista pakowania – zapamiętaj odhaczenia */
+var boxes=document.querySelectorAll('.checklist input');
+try{
+  var saved=JSON.parse(localStorage.getItem('andaluzja-pack')||'{}');
+  boxes.forEach(function(b,i){b.checked=!!saved[i];b.addEventListener('change',function(){
+    var s={};boxes.forEach(function(x,j){if(x.checked)s[j]=1;});
+    try{localStorage.setItem('andaluzja-pack',JSON.stringify(s));}catch(e){}
+  });});
+}catch(e){}
+})();
+</script>
+</body>
+</html>
